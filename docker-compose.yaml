@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-  highlife:
+  bookstore:
     build: .
     container_name: book
     image: book:latest
