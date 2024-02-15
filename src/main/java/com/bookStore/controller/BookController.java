@@ -1,6 +1,7 @@
 package com.bookStore.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import com.bookStore.service.MyBookListService;
 import java.util.*;
 
 @Controller
+@PreAuthorize("hasAuthority('USER')")
 public class BookController {
 	
 	@Autowired
@@ -22,14 +24,14 @@ public class BookController {
 	@Autowired
 	private MyBookListService myBookService;
 	
-	@GetMapping("/")
+	@GetMapping("/home")
 	public String home() {
-		return "home";
+		return "books/home";
 	}
 	
 	@GetMapping("/book_register")
 	public String bookRegister() {
-		return "bookRegister";
+		return "books/bookRegister";
 	}
 	
 	@GetMapping("/available_books")
@@ -38,7 +40,7 @@ public class BookController {
 //		ModelAndView m=new ModelAndView();
 //		m.setViewName("bookList");
 //		m.addObject("book",list);
-		return new ModelAndView("bookList","book",list);
+		return new ModelAndView("books/bookList","book",list);
 	}
 	
 	@PostMapping("/save")
@@ -51,7 +53,7 @@ public class BookController {
 	{
 		List<MyBookList>list=myBookService.getAllMyBooks();
 		model.addAttribute("book",list);
-		return "myBooks";
+		return "books/myBooks";
 	}
 	@RequestMapping("/mylist/{id}")
 	public String getMyList(@PathVariable("id") int id) {
@@ -65,7 +67,7 @@ public class BookController {
 	public String editBook(@PathVariable("id") int id,Model model) {
 		Book b=service.getBookById(id);
 		model.addAttribute("book",b);
-		return "bookEdit";
+		return "books/bookEdit";
 	}
 	@RequestMapping("/deleteBook/{id}")
 	public String deleteBook(@PathVariable("id")int id) {
