@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" xmlns:th="https://www.thymeleaf.com">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Book Store</title>
+    <style>
+        body {
+            /* Postavljamo sliku kao pozadinu */
+            background-image: url('/images/pexels-ricky-esquivel-1907785.jpg');
+            /* Podešavamo veličinu i ponavljanje slike */
+            background-size: cover;
+            background-repeat: no-repeat;
+            /* Postavljamo relativni položaj za pseudo-element */
+            position: relative;
+        }
+        /* Stilovi za pseudo-element koji će predstavljati sloj preko slike */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Postavljamo boju preko slike */
+
+        }
+        .container.text-center {
+            /* Ako želimo da promenimo boju teksta unutar kontejnera, postavljamo je na kontrastnu */
+            color: #f3e5f5; /* Darker shade of purple for text in container */
+        }
+        .h5 {
+            /* Postavljamo boju teksta na bijelu */
+            color: white;
+            /* Postavljamo prozirnost pozadine */
+            background-color: rgba(0, 0, 0, 0.5); /* Boja je crna (0, 0, 0) sa prozirnošću 0.3 */
+            /* Dodajemo malo prostora oko teksta */
+            padding: 20px;
+            /* Radi bolje čitljivosti, dodajemo malo zakošenje teksta */
+            text-shadow: 1px 1px 2px black;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#">Book Store</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-white" aria-current="page" href="/home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="available_books">Dostupne knjige</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="my_books">Moje knjige</a>
+                </li>
+            </ul>
+            <div>
+                <a class="nav-link text-white" href="book_register">Dodaj novu knjigu</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container text-center my-5">
+    <h1 class="display-1">DOBRODOŠLI</h1>
+    <h6 class="h5">
+        U našoj knjižari, svaka stranica oživljava priču. Naša strast prema knjigama odražava se u svakom kutku prostora, svakom rednom broju na policama. Ovdje, svaka knjiga je poziv na putovanje, na otkrivanje novih svjetova, novih ideja i novih emocija.
+        <br>
+        Naša knjižara nije samo mjesto za kupovinu knjiga; to je utočište za ljubitelje pisane riječi, mjesto gdje se dijele priče i gdje se inspiracija rađa. Naš tim strastvenih knjižara uvijek je tu da preporuči naslove, podijeli priče ili jednostavno razgovara o omiljenim književnim junacima.
+        <br>
+        Uz udobne kaučeve i miran ambijent, naša knjižara postaje oaza za one koji traže trenutke tišine i introspekcije. Svaki put kada zakoračite kroz vrata, dočekuje vas miris knjiga i osjećaj doma.
+        <br>
+        Dobrodošli u našu knjižaru - mjesto gdje riječi postaju stvarnost i gdje se mašta pretvara u stvarnost.
+    </h6>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>
